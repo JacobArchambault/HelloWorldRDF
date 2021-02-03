@@ -2,31 +2,33 @@
 using VDS.RDF;
 using VDS.RDF.Writing;
 
-
-public class HelloWorld
+namespace HelloWorldRDF
 {
-    public static void Main()
+    public class HelloWorld
     {
-        //Fill in the code shown on this page here to build your hello world application
-        Graph g = new Graph();
-
-        IUriNode dotNetRDF = g.CreateUriNode(UriFactory.Create("http://www.dotnetrdf.org"));
-        IUriNode says = g.CreateUriNode(UriFactory.Create("http://example.org/says"));
-        ILiteralNode helloWorld = g.CreateLiteralNode("Hello World");
-        ILiteralNode bonjourMonde = g.CreateLiteralNode("Bonjour tout le Monde", "fr");
-
-        g.Assert(new Triple(dotNetRDF, says, helloWorld));
-        g.Assert(new Triple(dotNetRDF, says, bonjourMonde));
-
-        foreach (Triple t in g.Triples)
+        public static void Main()
         {
-            Console.WriteLine(t.ToString());
+            //Fill in the code shown on this page here to build your hello world application
+            Graph g = new();
+
+            IUriNode dotNetRDF = g.CreateUriNode(UriFactory.Create("http://www.dotnetrdf.org"));
+            IUriNode says = g.CreateUriNode(UriFactory.Create("http://example.org/says"));
+            ILiteralNode helloWorld = g.CreateLiteralNode("Hello World");
+            ILiteralNode bonjourMonde = g.CreateLiteralNode("Bonjour tout le Monde", "fr");
+
+            g.Assert(new Triple(dotNetRDF, says, helloWorld));
+            g.Assert(new Triple(dotNetRDF, says, bonjourMonde));
+
+            foreach (Triple t in g.Triples)
+            {
+                Console.WriteLine(t.ToString());
+            }
+
+            NTriplesWriter ntwriter = new();
+            ntwriter.Save(g, "HelloWorld.nt");
+
+            RdfXmlWriter rdfxmlwriter = new();
+            rdfxmlwriter.Save(g, "HelloWorld.rdf");
         }
-
-        NTriplesWriter ntwriter = new NTriplesWriter();
-        ntwriter.Save(g, "HelloWorld.nt");
-
-        RdfXmlWriter rdfxmlwriter = new RdfXmlWriter();
-        rdfxmlwriter.Save(g, "HelloWorld.rdf");
     }
 }
