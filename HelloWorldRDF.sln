@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30803.129
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldRDF", "HelloWorldRDF.csproj", "{596D87D6-66C6-4605-99AF-17BE6C9048E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{596D87D6-66C6-4605-99AF-17BE6C9048E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596D87D6-66C6-4605-99AF-17BE6C9048E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596D87D6-66C6-4605-99AF-17BE6C9048E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596D87D6-66C6-4605-99AF-17BE6C9048E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2442F6A8-16CC-406D-B248-23E0152329CE}
+	EndGlobalSection
+EndGlobal
